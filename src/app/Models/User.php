@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Models\WeightLog;
+use App\Models\WeightTarget;
+
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -41,4 +44,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // 目標体重（1つ）
+    public function weightTarget()
+    {
+        return $this->hasOne(WeightTarget::class);
+    }
+
+    // 体重ログ（複数）
+    public function weightLogs()
+    {
+        return $this->hasMany(WeightLog::class);
+    }
+
 }
