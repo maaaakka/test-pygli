@@ -22,12 +22,22 @@ class RegisterStep2Request extends FormRequest
      * @return array
      */
     public function rules()
-    {
-        return [
-            'current_weight' => 'required | numeric | max:9999 | regex:/^\d{1,4}(\.\d{1})?$/',
-            'target_weight' => 'required | numeric | max:9999 | regex:/^\d{1,4}(\.\d{1})?$/',
-        ];
-    }
+{
+    return [
+        'current_weight' => [
+            'required',
+            'numeric',
+            'max:9999',
+            'regex:/^\d{1,4}(\.\d{1})?$/',
+        ],
+        'target_weight' => [
+            'required',
+            'numeric',
+            'max:9999',
+            'regex:/^\d{1,4}(\.\d{1})?$/',
+        ],
+    ];
+}
 
     public function messages()
     {

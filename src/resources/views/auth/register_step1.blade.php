@@ -12,7 +12,11 @@
 </head>
 
 <body>
-    <h1 class="register__heading">会員登録</h1>
+    <h1 class="register-title__heading">PiGLy</h1><br />
+    <h2 class="register-title__middle">新規会員登録</h2><br />
+    <h3 class="register-title__bottom">
+        STEP1　アカウント情報の登録</h3>
+
 
     <form method="post" action="/register/step1">
     @csrf
