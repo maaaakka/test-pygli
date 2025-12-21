@@ -67,4 +67,5 @@ use App\Http\Controllers\WeightTargetController;
     Route::post('/weight_logs/{weightLog}/delete', [WeightLogController::class, 'destroy'])
         ->name('weight_logs.delete');
 
+
 });

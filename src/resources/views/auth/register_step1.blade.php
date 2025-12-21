@@ -1,55 +1,64 @@
-<!DOCTYPE html>
-<html lang="ja">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pygli</title>
-    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
-    <link rel="stylesheet" href="{{ asset('css/register_step1.css') }}">
-    @yield('css')
-</head>
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/register.css') }}">
+@endsection
 
-<body>
-    <h1 class="register-title__heading">PiGLy</h1><br />
-    <h2 class="register-title__middle">新規会員登録</h2><br />
-    <h3 class="register-title__bottom">
-        STEP1　アカウント情報の登録</h3>
+@section('content')
+<div class="register">
+    <h1 class="register__heading">PiGLy</h1>
+    <h2 class="register__title">新規会員登録</h2>
+    <h3 class="register__content">STEP1 アカウント情報の登録</h3>
 
+    <form method="POST" action="{{ route('register.step1') }}">
+        @csrf
 
-    <form method="post" action="/register/step1">
-    @csrf
-    <div class="register-form__group">
-        <label class="register-form__label" for="name">お名前</label>
-        <input type="text" name="name" value="{{ old('name') }}">
-        @error('name')
-        <div style="color:red">{{ $message }}</div>
-        @enderror
-    </div>
+        {{-- お名前 --}}
+        <div class="form-group">
+            <label>お名前</label>
+            <input
+                type="text"
+                name="name"
+                value="{{ old('name') }}"
+                placeholder="お名前を入力"
+            >
+            @error('name')
+            <p class="error">{{ $message }}</p>
+            @enderror
+        </div>
 
-    <div class="register-form__group">
-        <label class="register-form__label" for="email">メールアドレス</label>
-        <input type="email" name="email" value="{{ old('email') }}">
-        @error('email')
-        <div style="color:red">{{ $message }}</div>
-        @enderror
-    </div>
+        {{-- メールアドレス --}}
+        <div class="form-group">
+            <label>メールアドレス</label>
+            <input
+                type="email"
+                name="email"
+                value="{{ old('email') }}"
+                placeholder="メールアドレスを入力"
+            >
+            @error('email')
+            <p class="error">{{ $message }}</p>
+            @enderror
+        </div>
 
-    <div class="register-form__group">
-        <label class="register-form__label" for="password">パスワード</label>
-        <input type="password" name="password">
-        @error('password')
-        <div style="color:red">{{ $message }}</div>
-        @enderror
-    </div>
+        {{-- パスワード --}}
+        <div class="form-group">
+            <label>パスワード</label>
+            <input
+                type="password"
+                name="password"
+                placeholder="パスワードを入力"
+            >
+            @error('password')
+            <p class="error">{{ $message }}</p>
+            @enderror
+        </div>
 
-    <button type="submit">次に進む</button>
-</form>
+        <button class="register__btn">次へ進む</button>
+    </form>
 
-<p class="register-form__login">
-    <a href="/login">ログインはこちら</a>
-</p>
-
-</body>
-</html>
+    <p class="register__login">
+        <a href="{{ route('login') }}">ログインはこちら</a>
+    </p>
+</div>
+@endsection

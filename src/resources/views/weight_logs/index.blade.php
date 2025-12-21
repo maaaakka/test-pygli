@@ -16,14 +16,13 @@
     <p class="heading-btn">
         <a href="{{ route('weight_logs.goal_setting') }}">
         目標体重設定</a>
-        <form method="POST" action="{{ route('logout') }}" style="display:inline;">
+    </p>
+    <form method="POST" action="{{ route('logout') }}" style="display:inline;">
         @csrf
         <button type="submit" class="logout-btn">
         ログアウト
         </button>
         </form>
-    </p>
-
 
     <div class="summary">
     <div class="summary-item">

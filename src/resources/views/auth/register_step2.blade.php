@@ -1,46 +1,39 @@
-<!DOCTYPE html>
-<html lang="ja">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pygli</title>
-    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
-    <link rel="stylesheet" href="{{ asset('css/register_step2.css') }}">
-</head>
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/register.css') }}">
+@endsection
 
-
-<body>
-    <h1 class="register-title__heading">PiGLy</h1><br />
-    <h2 class="register-title__middle">新規会員登録</h2><br />
-    <h3 class="register-title__bottom">
-        STEP2　体重データの入力</h3>
+@section('content')
+    <div class="register">
+    <h1 class="register__heading">PiGLy</h1>
+    <h2 class="register__title">新規会員登録</h2>
+    <h3 class="register__content">STEP2 体重データの入力</h3>
 
     <form method="post" action="/register/step2">
     @csrf
-    <div class="register-form__group">
-        <label class="register-form__label" for="current_weight">現在の体重</label>
-        <input type="text" name="current_weight" value="{{ old('current_weight') }}">
-        @error('current_weight')
-        <div style="color:red">{{ $message }}</div>
-        @enderror
+    <div class="form-group">
+        <label>現在の体重</label>
+            <div class="input-with-unit">
+                <input type="text" name="current_weight" step="0.1" value="{{ old('current_weight') }}" placeholder="現在の体重を入力">
+                <span class="unit">kg</span>
+            </div>
+            @error('current_weight')
+            <p class="error">{{ $message }}</p>
+            @enderror
     </div>
 
-    <div class="register-form__group">
-        <label class="register-form__label" for="target_weight">目標の体重</label>
-        <input type="text" name="target_weight" value="{{ old('target_weight') }}">
-        @error('target_weight')
-        <div style="color:red">{{ $message }}</div>
-        @enderror
+    <div class="form-group">
+        <label>目標の体重</label>
+            <div class="input-with-unit">
+                <input type="text" name="target_weight" step="0.1" value="{{ old('target_weight') }}" placeholder="目標の体重を入力">
+                <span class="unit">kg</span>
+
+            @error('target_weight')
+            <p class="error">{{ $message }}</p>
+            @enderror
     </div>
 
     <button type="submit">アカウント作成</button>
 </form>
-
-<p class="register-form__login">
-    <a href="/login">ログインはこちら</a>
-</p>
-
-</body>
-</html>
+@endsection
