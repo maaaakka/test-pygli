@@ -34,6 +34,6 @@
             @enderror
     </div>
 
-    <button type="submit">アカウント作成</button>
+    <button class="register__btn" type="submit">アカウント作成</button>
 </form>
 @endsection

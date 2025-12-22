@@ -10,59 +10,85 @@
     <link rel="stylesheet" href="{{ asset('css/show.css') }}">
 </head>
 
-<body>
-    <h2>WeightLog</h2>
+<body class="page-bg">
 
-<form method="POST" action="{{ route('weight_logs.update', $weightLog) }}">
-    @csrf
+<!-- ===== ヘッダー ===== -->
+<header class="header">
+    <h1 class="header__logo">PiGLy</h1>
 
-    <label>日付</label>
-    <input type="date" name="date" value="{{ old('date', $weightLog->date) }}">
-    @error('date')
-    <div style="color:red">{{ $message }}
+    <div class="header__actions">
+        <a href="{{ route('weight_logs.goal_setting') }}" class="header-btn">
+            目標体重設定
+        </a>
+
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit" class="header-btn logout">ログアウト</button>
+        </form>
     </div>
-    @enderror
+</header>
 
-    <label>体重</label>
-    <input type="text" name="weight" value="{{ old('weight', $weightLog->weight) }}"> kg
-    @error('weight')
-    <div style="color:red">{{ $message }}</div>
-    @enderror
+<main class="container">
 
-    <label>摂取カロリー</label>
-    <input type="number" name="calories" value="{{ old('calories', $weightLog->calories) }}">
-    @error('calories')
-    <div style="color:red">{{ $message }}
+    <div class="card">
+        <h2 class="card__title">Weight Log</h2>
+
+        <form method="POST" action="{{ route('weight_logs.update', $weightLog->id) }}">
+            @csrf
+
+            <!-- 日付 -->
+            <div class="form-group">
+                <label>日付</label>
+                <input type="date" name="date" value="{{ $weightLog->date }}">
+            </div>
+
+            <!-- 体重 -->
+            <div class="form-group">
+                <label>体重</label>
+                <div class="input-unit">
+                    <input type="number" step="0.1" name="weight" value="{{ $weightLog->weight }}">
+                    <span>kg</span>
+                </div>
+            </div>
+
+            <!-- 摂取カロリー -->
+            <div class="form-group">
+                <label>摂取カロリー</label>
+                <div class="input-unit">
+                    <input type="number" name="calories" value="{{ $weightLog->calories }}">
+                    <span>cal</span>
+                </div>
+            </div>
+
+            <!-- 運動時間 -->
+            <div class="form-group">
+                <label>運動時間</label>
+                <input type="time" name="exercise_time" value="{{ $weightLog->exercise_time }}">
+            </div>
+
+            <!-- 運動内容 -->
+            <div class="form-group">
+                <label>運動内容</label>
+                <textarea name="exercise_content" rows="4">{{ $weightLog->exercise_content }}</textarea>
+            </div>
+
+            <!-- ボタン -->
+            <div class="btn-area">
+                <a href="{{ route('weight_logs.index') }}" class="btn-back">戻る</a>
+                <button type="submit" class="btn-update">更新</button>
+            </div>
+        </form>
+
+        <!-- 削除 -->
+        <form method="POST"
+                action="{{ route('weight_logs.delete', $weightLog->id) }}"
+                class="delete-form">
+                @csrf
+            <button type="submit" class="delete-btn">🗑</button>
+        </form>
     </div>
-    @enderror
 
-    <label>運動時間</label>
-    <input type="time" name="exercise_time"
-        value="{{ old('exercise_time', $weightLog->exercise_time) }}">
-    @error('exercise_time')
-    <div style="color:red">{{ $message }}
-    </div>
-    @enderror
+</main>
 
-    <label>運動内容</label>
-    <textarea name="exercise_content">{{ old('exercise_content', $weightLog->exercise_content) }}
-    </textarea>
-    @error('exercise_content')
-    <div style="color:red">{{ $message }}
-    </div>
-    @enderror
-
-    <div style="margin-top:20px">
-        <a href="{{ route('weight_logs.index') }}">戻る</a>
-        <button type="submit">更新</button>
-    </div>
-</form>
-
-{{-- 削除ボタン（小さく） --}}
-<form method="POST" action="{{ route('weight_logs.delete', $weightLog) }}">
-    @csrf
-    <button type="submit" style="font-size:12px;color:red">🗑
-    </button>
-</form>
 </body>
 </html>

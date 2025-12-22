@@ -1,0 +1,109 @@
+/* ===== 全体 ===== */
+body.create-page {
+    background: #fafafa;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+/* ===== オーバーレイ ===== */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.214);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 60px;
+}
+
+/* ===== ボックス ===== */
+.create-box {
+    background: #fff;
+    width: 520px;
+    margin: 0 auto;
+    padding: 36px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== タイトル ===== */
+.create-title {
+    font-size: 22px;
+    margin-bottom: 28px;
+}
+
+/* ===== フォーム ===== */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* ===== 必須ラベル ===== */
+.required {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 2px 6px;
+    font-size: 11px;
+    color: #fff;
+    background: #ff0000;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* ===== 単位付き ===== */
+.input-with-unit {
+    display: flex;
+    align-items: center;
+}
+
+.input-with-unit .unit {
+    margin-left: 8px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* ===== エラー ===== */
+.error {
+    font-size: 12px;
+    color: #ff0000;
+    margin-top: 4px;
+}
+
+/* ===== ボタン ===== */
+.button-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.btn-back {
+    flex: 1;
+    padding: 12px;
+    background: #ddd;
+    border-radius: 999px;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+}
+
+.btn-submit {
+    flex: 1;
+    padding: 12px;
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(90deg, #b388eb, #f7a8c5);
+    color: #fff;
+    cursor: pointer;
+}

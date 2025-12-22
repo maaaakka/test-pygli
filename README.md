@@ -1,4 +1,4 @@
-# (体重管理アプリ)
+# PiGLy(体重管理アプリ)
 
 ## 環境構築
 **Dockerビルド**
@@ -28,17 +28,23 @@ DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
 ```
-5. アプリケーションキーの作成
+5. Fortify導入
+``` bash
+composer require laravel/fortify
+
+php artisan vendor:publish --provider="Laravel\Fortify\FortifyServiceProvider"
+```
+6. アプリケーションキーの作成
 ``` bash
 php artisan key:generate
 ```
 
-6. マイグレーションの実行
+7. マイグレーションの実行
 ``` bash
 php artisan migrate
 ```
 
-7. シーディングの実行
+8. シーディングの実行
 ``` bash
 php artisan db:seed
 ```

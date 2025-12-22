@@ -33,6 +33,9 @@ use App\Http\Controllers\WeightTargetController;
 
     Route::post('/register/step2', [RegisterStep2Controller::class, 'store']);
 
+    Route::get('/login', function () {
+        return view('auth.login');
+        })->name('login');
 
     Route::middleware('auth')->group(function () {
 
