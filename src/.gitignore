@@ -13,3 +13,5 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+# Docker MySQL data（絶対にGit管理しない）
+docker/mysql/data/
