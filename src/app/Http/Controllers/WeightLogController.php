@@ -32,7 +32,7 @@ class WeightLogController extends Controller
 
     $weightLogs = $query->paginate(8)->withQueryString();
 
-    // ===== サマリー =====
+    // サマリー
     $targetWeight = optional($user->weightTarget)->target_weight;
 
     $latestLog = $user->weightLogs()
