@@ -3,7 +3,6 @@ body.page-bg {
     color: #333;
 }
 
-/* ===== ヘッダー ===== */
 .header {
     display: flex;
     justify-content: space-between;
@@ -34,27 +33,24 @@ body.page-bg {
     cursor: pointer;
 }
 
-/* ===== レイアウト ===== */
 .container {
     max-width: 520px;
     margin: 60px auto;
 }
 
-/* ===== カード ===== */
-.card {
+.box {
     background: #fff;
     border-radius: 12px;
     padding: 40px;
     position: relative;
 }
 
-.card__title {
+.box__title {
     text-align: center;
     font-size: 22px;
     margin-bottom: 30px;
 }
 
-/* ===== フォーム ===== */
 .form-group {
     margin-bottom: 20px;
 }
@@ -85,7 +81,12 @@ body.page-bg {
     color: #666;
 }
 
-/* ===== ボタン ===== */
+.error {
+    font-size: 12px;
+    color: #ff0000;
+    margin-top: 4px;
+}
+
 .btn-area {
     display: flex;
     justify-content: center;
@@ -110,7 +111,6 @@ body.page-bg {
     cursor: pointer;
 }
 
-/* ===== 削除 ===== */
 .delete-form {
     position: absolute;
     right: 20px;

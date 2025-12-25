@@ -10,7 +10,7 @@
 エラーが発生する場合は、docker-compose.ymlファイルの「mysql」内に「platform」の項目を追加で記載してください*
 ``` bash
 mysql:
-    platform: linux/x86_64(この文追加)
+    platform: linux/amd64(この文追加)
     image: mysql:8.0.26
     environment:
 ```
@@ -55,7 +55,7 @@ php artisan db:seed
 - MySQL8.0.26
 
 ## ER図
-
+![alt](pigry-er.png)
 
 ## URL
 - 開発環境：http://localhost/

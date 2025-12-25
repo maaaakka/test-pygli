@@ -12,7 +12,6 @@
 
 <body class="page-bg">
 
-<!-- ===== ヘッダー ===== -->
 <header class="header">
     <h1 class="header__logo">PiGLy</h1>
 
@@ -30,56 +29,65 @@
 
 <main class="container">
 
-    <div class="card">
-        <h2 class="card__title">Weight Log</h2>
+    <div class="box">
+        <h2 class="box__title">Weight Log</h2>
 
         <form method="POST" action="{{ route('weight_logs.update', $weightLog->id) }}">
             @csrf
+            @method('PUT')
 
-            <!-- 日付 -->
             <div class="form-group">
                 <label>日付</label>
                 <input type="date" name="date" value="{{ $weightLog->date }}">
+                @error('date')
+                <p class="error">{{ $message }}</p>
+                @enderror
             </div>
 
-            <!-- 体重 -->
             <div class="form-group">
                 <label>体重</label>
                 <div class="input-unit">
                     <input type="number" step="0.1" name="weight" value="{{ $weightLog->weight }}">
                     <span>kg</span>
                 </div>
+                @error('weight')
+                <p class="error">{{ $message }}</p>
+                @enderror
             </div>
 
-            <!-- 摂取カロリー -->
             <div class="form-group">
                 <label>摂取カロリー</label>
                 <div class="input-unit">
                     <input type="number" name="calories" value="{{ $weightLog->calories }}">
                     <span>cal</span>
                 </div>
+                @error('calories')
+                <p class="error">{{ $message }}</p>
+                @enderror
             </div>
 
-            <!-- 運動時間 -->
             <div class="form-group">
                 <label>運動時間</label>
                 <input type="time" name="exercise_time" value="{{ $weightLog->exercise_time }}">
+                @error('exercise_time')
+                <p class="error">{{ $message }}</p>
+                @enderror
             </div>
 
-            <!-- 運動内容 -->
             <div class="form-group">
                 <label>運動内容</label>
                 <textarea name="exercise_content" rows="4">{{ $weightLog->exercise_content }}</textarea>
+                @error('exercise_content')
+                <p class="error">{{ $message }}</p>
+                @enderror
             </div>
 
-            <!-- ボタン -->
             <div class="btn-area">
                 <a href="{{ route('weight_logs.index') }}" class="btn-back">戻る</a>
                 <button type="submit" class="btn-update">更新</button>
             </div>
         </form>
 
-        <!-- 削除 -->
         <form method="POST"
                 action="{{ route('weight_logs.delete', $weightLog->id) }}"
                 class="delete-form">

@@ -12,6 +12,7 @@
 
     <form method="post" action="/register/step2">
     @csrf
+
     <div class="form-group">
         <label>現在の体重</label>
             <div class="input-with-unit">

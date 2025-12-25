@@ -1,11 +1,9 @@
-/* ===== 全体 ===== */
 body.create-page {
     background: #fafafa;
     min-height: 100vh;
     overflow-y: auto;
 }
 
-/* ===== オーバーレイ ===== */
 .overlay {
     position: fixed;
     inset: 0;
@@ -16,7 +14,6 @@ body.create-page {
     padding-top: 60px;
 }
 
-/* ===== ボックス ===== */
 .create-box {
     background: #fff;
     width: 520px;
@@ -26,13 +23,11 @@ body.create-page {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* ===== タイトル ===== */
 .create-title {
     font-size: 22px;
     margin-bottom: 28px;
 }
 
-/* ===== フォーム ===== */
 .form-group {
     margin-bottom: 18px;
 }
@@ -43,7 +38,6 @@ body.create-page {
     display: block;
 }
 
-/* ===== 必須ラベル ===== */
 .required {
     display: inline-block;
     margin-left: 6px;
@@ -62,7 +56,6 @@ body.create-page {
     border-radius: 6px;
 }
 
-/* ===== 単位付き ===== */
 .input-with-unit {
     display: flex;
     align-items: center;
@@ -74,14 +67,12 @@ body.create-page {
     color: #555;
 }
 
-/* ===== エラー ===== */
 .error {
     font-size: 12px;
     color: #ff0000;
     margin-top: 4px;
 }
 
-/* ===== ボタン ===== */
 .button-group {
     display: flex;
     gap: 12px;

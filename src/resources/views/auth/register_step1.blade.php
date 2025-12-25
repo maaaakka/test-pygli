@@ -13,7 +13,6 @@
     <form method="POST" action="{{ route('register.step1') }}">
         @csrf
 
-        {{-- お名前 --}}
         <div class="form-group">
             <label>お名前</label>
             <input
@@ -27,7 +26,6 @@
             @enderror
         </div>
 
-        {{-- メールアドレス --}}
         <div class="form-group">
             <label>メールアドレス</label>
             <input
@@ -41,7 +39,6 @@
             @enderror
         </div>
 
-        {{-- パスワード --}}
         <div class="form-group">
             <label>パスワード</label>
             <input

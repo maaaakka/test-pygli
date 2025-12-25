@@ -9,7 +9,6 @@
 </head>
 <body class="index-page">
 
-<!-- ===== ヘッダー ===== -->
 <header class="header">
     <h1 class="header__logo">PiGLy</h1>
 
@@ -27,7 +26,6 @@
 
 <main class="container">
 
-    <!-- ===== サマリー ===== -->
     <div class="summary">
         <div class="summary-item">
             <p>目標体重</p>
@@ -43,7 +41,6 @@
         </div>
     </div>
 
-    <!-- ===== 検索 & 追加 ===== -->
     <div class="actions">
         <form method="GET" class="search-form">
             <input type="date" name="start_date" value="{{ $startDate }}">
@@ -67,7 +64,6 @@
                 </p>
             @endif
 
-    <!-- ===== 一覧 ===== -->
     <table class="table">
         <thead>
             <tr>

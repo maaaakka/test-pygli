@@ -73,14 +73,6 @@ class WeightLogController extends Controller
 
     public function update(WeightLogRequest $request, WeightLog $weightLog)
     {
-    $weightLog->update([
-        'date' => $request->date,
-        'weight' => $request->weight,
-        'calories' => $request->calories,
-        'exercise_time' => $request->exercise_time,
-        'exercise_content' => $request->exercise_content,
-        ]);
-
         $weightLog->update($request->validated());
 
         return redirect()->route('weight_logs.index');

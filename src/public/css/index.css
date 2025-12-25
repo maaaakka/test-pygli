@@ -3,7 +3,6 @@ body {
     color: #333;
 }
 
-/* ===== ヘッダー ===== */
 .header {
     display: flex;
     justify-content: space-between;
@@ -54,13 +53,11 @@ body {
     border-color: #ddd;
 }
 
-/* ===== レイアウト ===== */
 .container {
     max-width: 900px;
     margin: 40px auto;
 }
 
-/* ===== サマリー ===== */
 .summary {
     display: flex;
     justify-content: space-between;
@@ -97,7 +94,6 @@ body {
     color: #888;
 }
 
-/* ===== 検索 & 追加 ===== */
 .actions {
     display: flex;
     justify-content: space-between;
@@ -156,7 +152,6 @@ body {
     font-size: 14px;
 }
 
-/* ===== テーブル ===== */
 .table {
     width: 100%;
     border-collapse: collapse;
@@ -178,7 +173,6 @@ body {
     background: #fafafa;
 }
 
-/* ===== ページネーション ===== */
 .pagination {
     margin-top: 30px;
     text-align: center;

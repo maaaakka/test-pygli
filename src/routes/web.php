@@ -63,7 +63,7 @@ use App\Http\Controllers\WeightTargetController;
         ->name('weight_logs.show');
 
     // 更新
-    Route::post('/weight_logs/{weightLog}/update', [WeightLogController::class, 'update'])
+    Route::put('/weight_logs/{weightLog}/update', [WeightLogController::class, 'update'])
         ->name('weight_logs.update');
 
     // 削除
